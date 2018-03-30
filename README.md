@@ -24,9 +24,9 @@ The threads use the counter to add and subtract values.
 
 ## 1. Using unsynchronized counter object
 
-1.1 The total should be zero but the total is not always the same.Sometimes the total is -72221.
-1.2 The average run time is 0.02253567 sec.
-1.3 first to forth result is zero but the fifth is -72221 because subtask may work faster than addtask. Thus, subtask is using the old value not the value that comes from addtask would affects the total.
+1.1 The total should be zero but the total is not always the same. Sometimes the total is -72221.  
+1.2 The average run time is 0.02253567 sec.   
+1.3 first to forth result is zero but the fifth is -72221 because subtask may work faster than addtask. Thus, subtask is using the old value not the value that comes from addtask would affects the total.                               
 ## 2. Implications for Multi-threaded Applications
 If user do several activities at the same time such as using ATM for deposit and using mobile banking gets the transfer money when override it could have overlapped and the transfer money will gone and balance has wrong value.
 How might this affect real applications?  
@@ -38,12 +38,12 @@ How might this affect real applications?
 3.4 we have unlock code in finally block, to make sure it run even if try block throws exception or not.
 
 ## 4. Counter with synchronized method
-4.1 the total is always zero. The average run time is 0.51565933 sec.
-4.2 When the addtask is executing a synchronized method blocks another thread.
+4.1 the total is always zero. The average run time is 0.51565933 sec.   
+4.2 When the addtask is executing a synchronized method blocks another thread.  
 4.3 Synchronized methods enable simple strategy for preventing thread interference and memory consistency error.
 
 ## 5. Counter with AtomicLong
-5.1 Java provides AtomicLong which can be used without any synchronization. The average run time is 0.25782000 sec.
+5.1 Java provides AtomicLong which can be used without any synchronization. The average run time is 0.25782000 sec.  
 5.2 you would use AtomicLong when you have to guarantee that the value can be used in concurrent environment and don't need the wrapper class.
 Using AtomicLong because Long does not allow for thread interoperability.
 
